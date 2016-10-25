@@ -1,0 +1,73 @@
+<html>
+   <head>
+       <title>The Codingdojo ColorClicker!</title>
+       <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+       <script type="text/javascript">
+       $(document).ready(function(){
+           $("#form1").on("submit",function(){
+               // var name = document.getElementByID("name").value;
+               // console.log($(this).serializeArray());
+               var descr = $("#description").val();
+               var nameF = $("#nameF").val();
+               var nameL = $("#nameL").val();
+               console.log(name);
+               $("#container").append('<div class="contact"><h1>'+nameF+nameL+'</h1><p>Click For Descripton</p>');
+               $("#container").children('.div').css("background-color","blue");
+               $('p').click(function(){
+                   event.stopPropagation();
+                   $(this).text(descr);
+               })
+               return false;
+           })
+
+
+       });
+       </script>
+
+       <style type="text/css">
+           *{
+              font-family: sans-serif;
+           }
+           h2, h1, h3 {
+              text-align: center;
+           }
+           .contact {
+              margin: 0px auto;
+              margin-top: 30px;
+              background-color: lightblue;
+              width: 300px;
+              height: 130px;
+           }
+           .contact div{
+              background-color: blue;
+              display: inline-block;
+              width: 300px;
+              height: 130px;
+              margin: 60px 20px;
+              text-align: center;
+           }
+       </style>
+   </head>
+
+<body>
+    <div id="container">
+        <div id="form1">
+            <form id="form1">
+                First Name: <input id="nameF" type='text' name='first_name'><br>
+                Last Name: <input id="nameL" type='text' name='last_name'><br>
+                Description:<textarea id="description" rows="5" cols="40"></textarea>
+                <input type='submit' value='submit'>
+            </form>
+        </div>
+        <div class="contact">
+            <h1>UserName</h1>
+            <p class="moreinfo">Click for Description</p>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
